@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: randomizer-nginx
+    volumes:
+      - ./randomizer:/usr/share/nginx/html:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "5005:80" # Nginx будет доступен на порту 5005
